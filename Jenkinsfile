@@ -11,9 +11,10 @@ pipeline {
         }
         stage('Fixing') {
             steps {
-                container_name = "portfolio"
+                def container_name = "portfolio"
                 sh '''
                      docker stop ${container_name}
+                     docker rm -f ${container_name}
                      '''
             }
         }
