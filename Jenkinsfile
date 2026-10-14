@@ -26,6 +26,14 @@ pipeline {
                     curl -I http://35.153.181.88:1601/
                 '''
             }
+            
+        }
+         stage('Verify') {
+            steps {
+                sh '''
+                    echo "branch1"
+                '''
+            }
         }
     }
 }
