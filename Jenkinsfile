@@ -9,6 +9,14 @@ pipeline {
                     url: 'https://github.com/Khajushaik/Portfolio.git'
             }
         }
+        stage('Fixing') {
+            steps {
+                container_name = "portfolio"
+                sh '''
+                     docker stop ${container_name}
+                     '''
+            }
+        }
 
         stage('Deploy') {
             steps {
